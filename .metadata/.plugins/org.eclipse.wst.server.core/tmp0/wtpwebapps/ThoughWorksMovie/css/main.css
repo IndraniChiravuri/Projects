@@ -1,0 +1,52 @@
+[genuitec-file-id="wc4-2"],[genuitec-lp-path="/ThoughWorksMovie/WebContent/css/main.css"],[genuitec-lp-enabled=false]{
+  /* for codelive */
+}
+
+@CHARSET "UTF-8";
+
+css code:
+
+body {
+	background: url('nature.jpg') no-repeat;
+	background-size: cover;
+	font-family: Arial;
+	color: white;
+}
+
+ul {
+	margin: 0px;
+	padding: 50px;
+	list-style: none;
+}
+
+ul li {
+	float: right;
+	width: 400px;
+	height: 40px;
+	background-color: black;
+	opacity: .8;
+	line-height: 40px;
+	text-align: center;
+	front-size: 20px;
+	margin-right: 2px;
+}
+
+ul li a {
+	width: 400px;
+	height: 40px;
+	text-decoration: none;
+	color: white;
+	display: block;
+}
+
+ul li a:hover {
+	background-color: teal;
+}
+
+ul li ul li {
+	display: none;
+}
+
+ul li:hover ul li {
+	display: block;
+}

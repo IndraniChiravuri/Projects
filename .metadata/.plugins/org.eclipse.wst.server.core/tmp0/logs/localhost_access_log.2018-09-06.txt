@@ -1,0 +1,6 @@
+127.0.0.1 - - [06/Sep/2018:15:05:27 +0530] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [06/Sep/2018:15:05:31 +0530] "GET /ThoughWorksMovie/index.html HTTP/1.1" 200 3437
+0:0:0:0:0:0:0:1 - - [06/Sep/2018:15:05:31 +0530] "GET /ThoughWorksMovie/js/app.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [06/Sep/2018:15:05:38 +0530] "GET /favicon.ico HTTP/1.1" 404 1016
+0:0:0:0:0:0:0:1 - - [06/Sep/2018:15:07:14 +0530] "GET /ThoughWorksMovie/index.html HTTP/1.1" 200 3464
+0:0:0:0:0:0:0:1 - - [06/Sep/2018:15:07:34 +0530] "GET /ThoughWorksMovie/index.html HTTP/1.1" 304 -

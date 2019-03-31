@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html ng-app="Hotel">
+<head>
+<meta charset="UTF-8">
+<title>SignUpForm.html</title>
+<link rel="stylesheet" href="css/bootstrap/bootstrap.css" />
+<link rel="stylesheet" href="css/customstyle.css" />
+<script src="js/jquery/jquery-3.2.1.js"></script>
+<script src="js/bootstrap/bootstrap.js"></script>
+<script src="js/angularjs/angular.js"></script>
+<script src="js/app.js"></script>
+</head>
+<body>
+	<!-- Navigation Bar Start -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="MainPage.html">Explore</a>
+			</div>
+		</div>
+	</nav>
+	<!-- Navigation Bar End -->
+	<!-- Jumbotron Start -->
+	<div class="jumbotron">
+		<div class="container">
+			<h1>Explore</h1>
+		</div>
+	</div>
+	<!-- Jumbotron End -->
+	<!-- Content Start -->
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-4" style="border-right-style: solid;">
+				<h1>Sign Up</h1>
+
+				<form id="signUpForm" name="form1">
+					<div class="form-group">
+						<input type="text" name="p1" class="form-control"
+							placeholder="First Name" ng-model="firstName" required> <span
+							ng-show="form1.p1.$touched && form1.p1.$invalid"
+							style="color: red;">First Name cannot be left blank.</span>
+					</div>
+					<div class="form-group">
+						<input type="text" name="p2" class="form-control"
+							placeholder="Last Name" ng-model="lastName" required> <span
+							ng-show="form1.p2.$touched && form1.p2.$invalid"
+							style="color: red;">Last Name cannot be left blank.</span>
+					</div>
+					<div class="form-group">
+						<input type="email" name="p3" class="form-control"
+							placeholder="Email Address" ng-model="email" required> <span
+							ng-show="form1.p3.$touched && form1.p3.$invalid"
+							style="color: red;"> <span
+							ng-show="form1.p3.$error.required" style="color: red;">Email
+								ID cannot be left blank.</span> <span ng-show="form1.p3.$error.email"
+							style="color: red;">Provide a valid Email ID.</span>
+						</span>
+					</div>
+					<div class="form-group">
+						<input type="number" name="p4" class="form-control"
+							placeholder="Contact Number" ng-model="contactNumber" required>
+						<span ng-show="form1.p4.$touched && form1.p4.$invalid"
+							style="color: red;">Contact Number cannot be left blank.</span>
+					</div>
+					<div class="radio">
+						<label> <input type="radio" name="p5" value="male"
+							ng-model="gender"> <b style= "color:white;">Male</b>
+						</label>
+					</div>
+					<div class="radio">
+						<label> <input type="radio" name="p5" value="female"
+							ng-model="gender"> <b style= "color:white;">Female</b>
+						</label>
+					</div>
+					<div class="form-group">
+						<input type="password" name="p6" class="form-control"
+							placeholder="Password" ng-model="password" required> <span
+							ng-show="form1.p6.$touched && form1.p6.$invalid"
+							style="color: red;">Password cannot be left blank.</span>
+					</div>
+					<button class="btn btn-primary"
+						ng-disabled="form1.p1.$invalid ||
+form1.p2.$invalid || form1.p3.$invalid || form1.p4.$invalid ||
+form1.p6.$invalid"
+						data-toggle="modal" data-target="#signUpConfirmationModal">Sign
+						Up Now</button>
+				</form>
+			</div>
+			<!-- Modal Start -->
+			<div class="modal fade" id="signUpConfirmationModal" tabindex="-1"
+				role="dialog" aria-labelledby="signUpModalTitle">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"
+								aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							<h4 class="modal-title" id="signUpModalTitle">Please check
+								the details once</h4>
+						</div>
+						<div class="modal-body">
+							First Name : {{firstName}}<br> Last Name : {{lastName}}<br>
+							Gender : {{gender}}<br> Email ID : {{email}}<br>
+							Contact Number : {{contactNumber}}
+						</div>
+						<div class="modal-footer">
+							<div ng-controller="SignUpModalController">
+								<button type="button" class="btn btn-default"
+									data-dismiss="modal" ng-click="processCancellation()">Cancel</button>
+								<button type="button" class="btn btn-primary"
+									ng-click="processRegistration()" data-dismiss="modal">Proceed</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Modal End -->
+		</div>
+		<!-- Content End -->
+</body>
+</html>

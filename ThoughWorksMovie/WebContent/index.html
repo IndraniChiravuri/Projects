@@ -1,0 +1,68 @@
+<html>
+<head>
+ 	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui/0.4.0/angular-ui.min.js"></script>
+ <script src = "js/app.js"></script> 
+</head>
+
+<body ng-app="app" ng-controller="myCtrl">
+<div class="table-responsive">
+	<nav class="navbar navbar-inverse">
+  	<div class="container-fluid">
+    <div class="navbar-header">
+      <p class="navbar-brand">Movies List</p>
+    </div>
+    <input type="text" placeholder="search" ng-model="search">
+	<select  name="select" id="select" ng-model="select"  ng-options="c.country as c.country for c in movies | unique:'country'"></select>
+	<select name="select" id="select" ng-model="select" ng-options="x.language as x.language for x in movies | unique:'language'"></select>
+  </div>
+</nav>
+	<div class="alert alert-info alert-dismissible">
+    	<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+   		<strong>Information!</strong> Click on <i>Rating</i> column to sort through rating.
+  	</div>
+  	<div class="alert alert-info alert-dismissible">
+    	<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+   		<strong>Information!</strong> Click on  <i>Year</i> column to sort through year.
+  	</div>
+	<table class="table table-hover  table-bordered">
+		<thead>
+			<tr>
+				<th>Title</th>
+				<th>Director</th>
+				<th>Actor - 1</th>
+				<th>Actor - 2</th>
+				<th>Genres</th>
+				<th>Language</th>
+				<th>Country</th>
+				<th ng-click="orderByMe('content_rating')" class="table-primary">Rating</th>
+				<th>Budget</th>
+				<th ng-click="orderByMe('title_year')" class="table-primary">Year</th>
+				<th>Plot keywords</th>
+				<th>IMDB Link</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="x in movies |orderBy:myOrderBy | filter:search | filter : select">
+				<td>{{x.movie_title}}</td>
+				<td>{{x.director_name}}</td>
+				<td>{{x.actor_1_name}}</td>
+				<td>{{x.actor_2_name}}</td>
+				<td>{{x.genres}}</td>
+				<td>{{x.language}}</td>
+				<td>{{x.country}}</td>
+				<td>{{x.content_rating}}</td>
+				<td>{{x.budget}}</td>
+				<td>{{x.title_year}}</td>
+				<td>{{x.plot_keywords}}</td>
+				<td>{{x.movie_imdb_link}}</td>
+			</tr>
+			</tbody>
+		</table>
+</div>
+</body>
+<html>

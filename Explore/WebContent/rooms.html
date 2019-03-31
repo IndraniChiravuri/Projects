@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html ng-app="Hotel">
+<head>
+<meta charset="UTF-8">
+<title>Rooms.html</title>
+<link rel="stylesheet" href="css/bootstrap/bootstrap.css"/>
+
+<script src="js/jquery/jquery-3.2.1.js"></script>
+<script src="js/bootstrap/bootstrap.js"></script>
+<script src="js/angularjs/angular.js"></script>
+<script src="js/angularjs/angular-route.min.js"></script>
+<script src="js/app.js"></script>
+</head>
+<body>
+ <!-- Navigation Bar Start -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="MainPage.html">Explore</a>
+			</div>
+			<div class="navbar-header navbar-right" align="right">
+				<a class="navbar-brand" href="MainPage.html">Sign Out</a>
+			</div>
+</div>
+		
+	</nav>
+	<!-- Navigation Bar End -->
+ <!-- Jumbotron Start -->
+ <div class="jumbotron">
+ <div class="container">
+ <h1>Explore</h1>
+ </div>
+ </div>
+ <!-- Jumbotron End -->
+ <!-- Content Start -->
+ <div class="container">
+ <div class="row">
+ <div class="col-md-12" ng-controller="DisplayController">
+ <p>
+<hr/>
+<form class="form-inline">
+<div class="form-group" >
+<label>Display rooms By</label>
+<select class="form-control"  ng-model="roomFilter">
+<option value="" ng-selected="selected">Select an
+Option</option>
+<option value="price">Price : Low to High</option>
+<option value="-price">Price : High to Low</option>
+<option value="hotel">Name in Ascending Order</option>
+<option value="-hotel">Name in Descending Order</option>
+</select>
+</div>
+<div class="form-group" style="margin-right: 20px;">
+<label>Or Search By</label>
+<input type="text" class="form-control" placeholder="Hotel Name/Location/Price" ng-model="hotelName">
+</div>
+</form>
+</p>
+ <p><hr/></p>
+ <div class="panel panel-default">
+ <div class="panel-heading">
+ <h3 class="panel-title">Explore Hotels...</h3>
+ </div>
+ <div class="panel-body">
+ <div class="row">
+ <div class="col-sm-4 colmd-8"
+ng-repeat="room in rooms | orderBy:roomFilter|filter:hotelName">
+ <div class="thumbnail">
+ <img style="height:
+200px; width:100%;" src="images/{{room.image}}">
+ <div
+class="caption">
+ <h4
+align="center"><b>City :</b>{{room.location}}</h4>
+ <hr/>
+
+<p><center><b>Hotel : {{room.hotel}}</b></center></p>
+<p><center><b>No of Beds : </b><b>{{room.beds}}</b></center></p>
+ <p
+align="center"><span class="badge"> Rs. {{room.price}}</span></p>
+<p
+align="center"><a href="Book.html"><input type = "button" value = "Book Now" style = "background-color:black;color:grey;"></a></p>
+ </div>
+ </div>
+ </div>
+ </div>
+</div>
+ </div>
+ </div>
+ </div>
+ <footer>
+ <hr/>
+ <p>&copy; 2017 Explore@ASD.</p>
+ </footer>
+ </div>
+ <!-- Content End -->
+</body>
+</html>

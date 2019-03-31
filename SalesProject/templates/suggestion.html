@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<h1 style="color: #4CAF50;">Suggestions</h1>
+<ul>
+{% for suggestion in suggestionlist[:-1]: %}
+<li><h3 style="font-style: italic;">{{suggestion}}</h3></li>
+{% endfor %}
+</ul>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		body {
+  			margin: 0;
+  			font-family: Arial, Helvetica, sans-serif;
+		}
+		form {
+			border: solid #4CAF50;
+			border-width: 4px 4px 4px 4px;
+			padding: 25px;
+			background-color: #f2f2f2;
+			width: 30%;
+		}
+		div {
+			padding: 35px;
+		}
+		input[type=submit] {
+		    background-color: #4CAF50;
+		    color: black;
+			padding: 14px 14px;
+			margin: 8px 0;
+			border: none;
+		    border-radius: 4px;
+			cursor: pointer;
+			font-size: 15px;
+			font-weight: bold;
+        }
+        input[type=text][type=email][type=password] {
+			padding: 25px 20px;
+			margin: 8px 0;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-sizing: border-box;
+			width: 35px;
+        }
+
+	</style>
+</head>
+<body>
+<div align="center">
+<form method="POST" action="#">
+	<table cellspacing="20">
+	<tr><th style="color: #4CAF50;">Category</th>
+	<td><select name="Category" required="Yes" id="Category" onclick="changesubcategory()">
+		<option>--Select--</option>
+		<option id="furniture">Furniture</option>
+		<option id="officesupplies">Office Supplies</option>
+		<option id="technology">Technology</option>
+	</select></td></tr>
+	<tr><th style="color: #4CAF50;">Sub-Category</th>
+	<td><select name="Sub-Category" id="Sub-Category" required="Yes">
+		<option>--Select--</option>
+		<option value ="Chairs" >Chairs-Furniture</option>
+		<option value="Furnishings">Furnishings-Furniture</option>
+		<option value="Bookcases">Bookcases-Furniture</option>
+		<option value="Tables">Tables-Furniture</option>
+		<option value="Paper">Paper-Office Supplies</option>
+		<option value="Lables" >Labels-Office Supplies</option>
+		<option value="Storeage">Storage-Office Supplies</option>
+		<option value="Binders" >Binders-Office Supplies</option>
+		<option value="Art" >Art-Office Supplies</option>
+		<option value="Fasteners" >Fasteners-Office Supplies</option>
+		<option value="Envelopes" >Envelopes-Office Supplies</option>
+		<option value="Appliances">Appliances-Office Supplies</option>
+		<option value="Supplies" >Supplies-Office Supplies</option>
+		<option value="Phones" >Phones-Technology</option>
+		<option value="Accessories" >Accessories-Technology</option>
+		<option value="Machines" >Machines-Technology</option>
+		<option value="Copiers" >Copiers-Technology</option>
+	</select></td></tr>
+	<tr><th style="color: #4CAF50">Region</th>
+	<td><select name="Region" required="Yes">
+		<option>--Select--</option>
+		<option id="central">Central</option>
+		<option id="south">South</option>
+		<option id="east">East</option>
+		<option id="west">West</option>
+	</select></td></tr>
+	<tr><th style="color: #4CAF50;">Type</th>
+	<td><select name="typeOA" required="Yes">
+		<option>--Select--</option>
+		<option value="Q">Quartely</option>
+		<option value="m">Monthly</option>
+	</select></td></tr>
+	</table>
+	<input type="submit" name="ok" value="OK">
+</form>
+<br><p>Please wait for few seconds after clicking OK button</p>
+</div>
+</body>
+</html>

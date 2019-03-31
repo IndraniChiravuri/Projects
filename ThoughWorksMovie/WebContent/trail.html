@@ -1,0 +1,20 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+<script src = "trailjs.js"></script>
+</head>
+
+<body>
+<div ng-app="app" ng-controller="myCtrl">
+<p> Number 1 <input type="number" ng-model="a"></p>
+<p> Number 2 <input type="number" ng-model="b"></p>
+<p> Addition is {{c}}</p>
+<table>
+	<tr ng-repeat="x in c">
+		<td>{{x.firstname}}</td>
+		<td>{{x.lastname}}</td>
+	</tr>
+</table>
+</div>
+</body>
+<html>

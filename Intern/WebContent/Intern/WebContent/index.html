@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale= 5">
+	<title> InternHunt</title>
+	<script src="js/angularjs/angular.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/angularjs/angular-route.min.js"></script>
+	<script src="js/jquery/jquery-3.2.1.js"></script>
+  	<script src="js/angularjs/angular.js"></script>
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="css/main.css" type="text/css" />
+	<link rel= "stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></link>
+<style>
+	html {
+  min-height: 100%;
+}
+body {
+
+  margin-bottom: 60px;
+}
+
+ul{ list-style:none;}
+img{ max-width:100%;}
+.data{
+	margin-top:150px;
+}
+.logo{
+          float:right;
+          margin-bottom:4px;
+          margin-top:4px;
+        }   
+.nav{float:left;}
+html
+</style>
+</head>
+<body ng-app = "internshalaApp" style="background-image: url('images/bg3.jpg');">
+<div id="page">
+
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div id="logo">
+			<h1>
+				<a href="index.html" id="logoLink">Internhunt</a>
+			</h1>
+			<div class="search"><table>
+				<tr><td><input type="text" class="form-control input-sm" maxlength="40" placeholder="Search"/></td>
+				<td><button type="submit" class="btn btn-primary btn-sm">Search</button></td></tr></table>
+			</div>
+		</div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+            <li><a href="#!home">Home</a></li>
+			<li><a href="#!interns">Interns</a></li>
+			<li><a href="#!about">AboutUS</a></li>
+			<li><a href="#!login">Login</a></li>
+			<li><a href="#!signup">Signup</a></li>
+			
+            </ul>
+        </div>
+    </div>
+</nav>
+ <div class = "data" ng-view>
+			<div w3-include-html="HomePage.html"></div>
+		</div>
+</html>

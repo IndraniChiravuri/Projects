@@ -1,0 +1,128 @@
+
+<html ng-app="Hotel">
+<style>
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700);
+
+body {
+  background-image:url('ima5.jpg');
+  background-repeat:no-repeat;
+  background-size:100% 100%;
+  font-family: "Open Sans Condensed", sans-serif;
+}
+
+#bg {
+  position: fixed;
+  left: 0;
+  top: 30%;
+  width: 100%;
+  height: 100%;
+   
+  background-size: cover;
+    
+}
+
+form {
+  position: relative;
+  width: 300px;
+  margin: 0 auto;
+  background: rgba(130,130,130,.3);
+  padding: 20px 22px;
+  border: 1px solid;
+  border-top-color: rgba(255,255,255,.4);
+  border-left-color: rgba(255,255,255,.4);
+  border-bottom-color: rgba(60,60,60,.4);
+  border-right-color: rgba(60,60,60,.4);
+}
+
+form input, form button {
+  width: 212px;
+  border: 1px solid;
+  border-bottom-color: rgba(255,255,255,.5);
+  border-right-color: rgba(60,60,60,.35);
+  border-top-color: rgba(60,60,60,.35);
+  border-left-color: rgba(80,80,80,.45);
+  background-color: rgba(0,0,0,.2);
+  background-repeat: no-repeat;
+  padding: 8px 24px 8px 10px;
+  font: bold .875em/1.25em "Open Sans Condensed", sans-serif;
+  letter-spacing: .075em;
+  color: #fff;
+  text-shadow: 0 1px 0 rgba(0,0,0,.1);
+  margin-bottom: 19px;
+}
+
+form input:focus { background-color: rgba(0,0,0,.4); }
+
+
+::-webkit-input-placeholder { color: #ccc; text-transform: uppercase; }
+::-moz-placeholder { color: #ccc; text-transform: uppercase; }
+:-ms-input-placeholder { color: #ccc; text-transform: uppercase; }
+
+form button[type=submit] {
+  width: 248px;
+  margin-bottom: 0;
+  color: #3f898a;
+  letter-spacing: .05em;
+  text-shadow: 0 1px 0 #133d3e;
+  text-transform: uppercase;
+  background: #225556;
+  border-top-color: #9fb5b5;
+  border-left-color: #608586;
+  border-bottom-color: #1b4849;
+  border-right-color: #1e4d4e;
+  cursor: pointer;
+}
+}
+</style>
+<head>
+<link rel="stylesheet" href="css/bootstrap/bootstrap.css" />
+
+<script src="js/angularjs/angular.js"></script>
+<script src="js/app.js"></script>
+</head>
+<body>
+<!-- Navigation Bar Start -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="MainPage.html">Explore</a>
+			</div>
+			<div ng-hide="hideStatus" id="displayArea" class=" navbar-text
+navbar-right" style="color: white;"></div>
+</div>
+			
+		
+	</nav>
+	<!-- Navigation Bar End -->
+<div id="bg" ng-controller="SignInController">
+				
+
+<form id="signInForm" name="form2">
+    
+  <label for=""></label>
+  <input type="email" name="p1" placeholder="Email"
+							class="form-control" ng-model="emailAddress" required> <span
+							ng-show="form2.p1.$invalid && form2.p1.$touched"
+							style="color: red;"> <span
+							ng-show="form2.p1.$error.required && form2.p1.$touched" style="color: red;">Email
+								ID cannot be left blank.</span> <span ng-show="form2.p1.$error.email && form2.p1.$dirty"
+							style="color: red;">Provide a valid Email ID.</span>
+						</span>
+    
+  <label for=""></label>
+  <input type="password" name="p2" placeholder="Password"
+							class="form-control" ng-model="loginPassword" required> <span
+							ng-show="form2.p2.$invalid && form2.p2.$touched"
+							style="color: red;">Password cannot be left blank.</span>
+    
+ <button type = "submit" class="btn btn-success"
+						ng-disabled="form2.p1.$invalid ||form2.p2.$invalid"
+						ng-click="processSignIn()">Sign In</a></button>
+    
+</form>
+ <div ng-hide="hideStatus" id="displayArea" class=" navbar-text
+navbar-right" style="color: white;"></div>
+</div>
+</body>
+
+</html>
