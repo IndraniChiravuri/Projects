@@ -82,7 +82,7 @@ public class GameManager : MonoBehaviour
     private void MoveDown()
     {
         Rigidbody rb = selectedZombie.GetComponent<Rigidbody>();
-        rb.AddForce(0, 0, -10, ForceMode.Impulse);
+        rb.AddForce(0, 0, -5, ForceMode.Impulse);
     }
 
     void SelectZombie(GameObject newZombie)

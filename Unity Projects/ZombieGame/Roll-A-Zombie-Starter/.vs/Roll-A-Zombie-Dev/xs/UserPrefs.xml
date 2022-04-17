@@ -7,8 +7,10 @@
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Roll-A-Zombie-Dev" expanded="True" selected="True">
-            <Node name="Assembly-CSharp" expanded="True" />
+          <Node name="Roll-A-Zombie-Dev" expanded="True">
+            <Node name="Assembly-CSharp" expanded="True">
+              <Node name="GameManager.cs" selected="True" />
+            </Node>
           </Node>
         </State>
       </Pad>
